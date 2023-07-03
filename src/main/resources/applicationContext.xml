@@ -11,10 +11,10 @@
         <constructor-arg value="Neil"/>
     </bean>
 
-    <bean id="musicBaen" class="ua.example.springapp2.impl.ClassicalMusic"/>
+    <bean id="musicBean" class="ua.example.springapp2.impl.ClassicalMusic"/>
 
     <bean id="musicPlayerBaen" class="ua.example.springapp2.MusicPlayer">
-           <constructor-arg ref="musicBaen" />
+           <constructor-arg ref="musicBean" />
     </bean>
 
 

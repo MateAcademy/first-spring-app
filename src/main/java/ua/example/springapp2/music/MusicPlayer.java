@@ -12,13 +12,14 @@ import ua.example.springapp2.music.Music;
  * @author Serhii Klunniy
  */
 @Data
+@Component
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Component
 public class MusicPlayer {
-     Music music;
-     String name;
-     int volume;
+
+    Music music;
+    String name;
+    int volume;
 
     //IoC
     @Autowired

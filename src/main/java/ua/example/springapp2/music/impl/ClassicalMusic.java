@@ -6,6 +6,10 @@ import ua.example.springapp2.music.Music;
  * @author Serhii Klunniy
  */
 public class ClassicalMusic implements Music {
+
+    private ClassicalMusic() {
+    }
+
     @Override
     public String getSong() {
         return "Hungarian Rhapsody";
@@ -17,6 +21,10 @@ public class ClassicalMusic implements Music {
 
     private void doMyDestroy() {
         System.out.println("Destroy method in class MusicPlayer");
+    }
+
+    public static Music getClassicalMusic() {
+        return new ClassicalMusic();
     }
 
 }

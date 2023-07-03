@@ -13,9 +13,9 @@
 <!--        <constructor-arg value="Neil"/>-->
 <!--    </bean>-->
 
-    <bean id="musicBean" class="ua.example.springapp2.impl.RockMusic"/>
+    <bean id="musicBean" class="ua.example.springapp2.impl.RockMusic" scope="prototype"/>
 
-    <bean id="musicPlayer" class="ua.example.springapp2.MusicPlayer">
+    <bean id="musicPlayer" class="ua.example.springapp2.MusicPlayer" scope="singleton">
 <!--        <constructor-arg ref="musicBean"/>-->
         <property name="music" ref="musicBean"/>
         <property name="name" value="${musicPlayer.name}"/>

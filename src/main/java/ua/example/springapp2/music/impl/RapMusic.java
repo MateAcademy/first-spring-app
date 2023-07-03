@@ -1,12 +1,11 @@
 package ua.example.springapp2.music.impl;
 
 import lombok.Data;
-import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
 
 @Data
-@Component("rapMusic")
-public class Rap implements Music {
+//@Component("rapMusic")
+public class RapMusic implements Music {
     @Override
     public String getSong() {
         return "Rap music";

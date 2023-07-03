@@ -6,11 +6,8 @@ import ua.example.springapp2.music.Music;
 /**
  * @author Serhii Klunniy
  */
-@Component
+//@Component
 public class ClassicalMusic implements Music {
-
-    private ClassicalMusic() {
-    }
 
     @Override
     public String getSong() {

@@ -8,14 +8,11 @@ import ua.example.springapp2.music.Music;
  * @author Serhii Klunniy
  */
 @Data
-@Component
+//@Component
 public class RockMusic implements Music {
     @Override
     public String getSong() {
         return "Wind cries Mary";
-    }
-
-    private RockMusic() {
     }
 
     public void doMyInit() {

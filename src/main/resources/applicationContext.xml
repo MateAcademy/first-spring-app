@@ -15,9 +15,11 @@
 
     <bean id="musicBean"
           class="ua.example.springapp2.music.impl.RockMusic"
-          scope="prototype"
+          scope="singleton"
           init-method="doMyInit"
-          destroy-method="doMyDestroy"/>
+          destroy-method="doMyDestroy"
+          factory-method="getRockMusic"/>
+
 
     <bean id="musicPlayer"
           class="ua.example.springapp2.music.MusicPlayer" scope="singleton"

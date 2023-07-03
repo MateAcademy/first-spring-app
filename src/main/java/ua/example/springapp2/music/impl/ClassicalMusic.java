@@ -1,10 +1,12 @@
 package ua.example.springapp2.music.impl;
 
+import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
 
 /**
  * @author Serhii Klunniy
  */
+@Component
 public class ClassicalMusic implements Music {
 
     private ClassicalMusic() {

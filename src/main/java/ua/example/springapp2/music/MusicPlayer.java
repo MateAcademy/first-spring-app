@@ -7,6 +7,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
+import ua.example.springapp2.music.impl.ClassicalMusic;
+import ua.example.springapp2.music.impl.RockMusic;
 
 /**
  * @author Serhii Klunniy
@@ -17,18 +19,19 @@ import ua.example.springapp2.music.Music;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MusicPlayer {
 
-    Music music;
-    String name;
+    ClassicalMusic classicalMusic;
+    RockMusic rockMusic;
     int volume;
 
-    //IoC
     @Autowired
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + rockMusic.getSong());
     }
 
     private void doMyInit() {

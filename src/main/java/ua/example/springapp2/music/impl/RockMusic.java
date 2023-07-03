@@ -1,12 +1,14 @@
 package ua.example.springapp2.music.impl;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
 
 /**
  * @author Serhii Klunniy
  */
 @Data
+@Component
 public class RockMusic implements Music {
     @Override
     public String getSong() {

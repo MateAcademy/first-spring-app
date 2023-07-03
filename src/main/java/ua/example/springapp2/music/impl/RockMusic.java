@@ -16,11 +16,11 @@ public class RockMusic implements Music {
     private RockMusic() {
     }
 
-    private void doMyInit() {
+    public void doMyInit() {
         System.out.println("Init method in class RockMusic");
     }
 
-    private void doMyDestroy() {
+    public void doMyDestroy() {
         System.out.println("Destroy method in class RockMusic");
     }
 

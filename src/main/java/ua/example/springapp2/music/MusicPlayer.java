@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
 
 /**
@@ -12,12 +14,14 @@ import ua.example.springapp2.music.Music;
 @Data
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Component
 public class MusicPlayer {
      Music music;
      String name;
      int volume;
 
     //IoC
+    @Autowired
     public MusicPlayer(Music music) {
         this.music = music;
     }

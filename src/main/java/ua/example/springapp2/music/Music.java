@@ -5,4 +5,8 @@ package ua.example.springapp2.music;
  */
 public interface Music {
     String getSong();
+
+    void doMyInit();
+
+    void doMyDestroy();
 }

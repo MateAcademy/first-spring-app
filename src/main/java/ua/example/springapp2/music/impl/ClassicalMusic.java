@@ -15,12 +15,12 @@ public class ClassicalMusic implements Music {
         return "Hungarian Rhapsody";
     }
 
-    private void doMyInit() {
-        System.out.println("Init method in class MusicPlayer");
+    public void doMyInit() {
+        System.out.println("Init method in class ClassicalMusic");
     }
 
-    private void doMyDestroy() {
-        System.out.println("Destroy method in class MusicPlayer");
+    public void doMyDestroy() {
+        System.out.println("Destroy method in class ClassicalMusic");
     }
 
     public static Music getClassicalMusic() {

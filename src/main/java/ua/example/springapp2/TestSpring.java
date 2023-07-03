@@ -9,8 +9,8 @@ import ua.example.springapp1.TestBean;
 public class TestSpring {
     public static void main(String[] args) {
         try (var context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
-            var testBean = context.getBean("musicPlayerBaen", MusicPlayer.class);
-            testBean.playMusic();
+            var musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+            musicPlayer.playMusic();
         }
     }
 }

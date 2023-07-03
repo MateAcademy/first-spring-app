@@ -7,49 +7,52 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="musicPlayer.properties"/>
+
     <bean id="testBean" class="ua.example.springapp1.TestBean">
         <constructor-arg value="Neil"/>
     </bean>
 
-    <bean id="musicBean" class="ua.example.springapp2.impl.ClassicalMusic"/>
+    <bean id="musicBean" class="ua.example.springapp2.impl.RockMusic"/>
 
-    <bean id="musicPlayerBaen" class="ua.example.springapp2.MusicPlayer">
-           <constructor-arg ref="musicBean" />
+    <bean id="musicPlayer" class="ua.example.springapp2.MusicPlayer">
+<!--        <constructor-arg ref="musicBean"/>-->
+        <property name="music" ref="musicBean"/>
     </bean>
 
 
-<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
-<!--    <context:component-scan base-package="com.klunniy.springcourse"/>-->
+    <!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+    <!--    <context:component-scan base-package="com.klunniy.springcourse"/>-->
 
-<!--    <bean id="rockBean" class="com.klunniy.springcourse.musicGenres.impl.RockGenres"/>-->
+    <!--    <bean id="rockBean" class="com.klunniy.springcourse.musicGenres.impl.RockGenres"/>-->
     <!--<constructor-arg value="Serhii"/> -->
 
-<!--    <bean id="popBean" class="com.klunniy.springcourse.musicGenres.impl.PopGenres"/>-->
-<!--    <bean id="classicalBean"-->
-<!--          class="com.klunniy.springcourse.musicGenres.impl.ClassicalGenres"-->
-<!--          init-method="doMyInit"-->
-<!--          destroy-method="doMyDestroy"-->
-<!--          scope="prototype"-->
-<!--          factory-method="getClassicalMusic"/>-->
+    <!--    <bean id="popBean" class="com.klunniy.springcourse.musicGenres.impl.PopGenres"/>-->
+    <!--    <bean id="classicalBean"-->
+    <!--          class="com.klunniy.springcourse.musicGenres.impl.ClassicalGenres"-->
+    <!--          init-method="doMyInit"-->
+    <!--          destroy-method="doMyDestroy"-->
+    <!--          scope="prototype"-->
+    <!--          factory-method="getClassicalMusic"/>-->
 
-<!--    <bean id="musicPlayer" class="com.klunniy.springcourse.player.MusicPlayer" scope="prototype">-->
-<!--        &lt;!&ndash;<constructor-arg ref="musicBean"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <property name="music" ref="musicBean"/>&ndash;&gt;-->
-<!--        <constructor-arg>-->
-<!--            <list>-->
-<!--                <ref bean="rockBean"/>-->
-<!--                <ref bean="popBean"/>-->
-<!--                <ref bean="classicalBean"/>-->
-<!--            </list>-->
-<!--        </constructor-arg>-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+    <!--    <bean id="musicPlayer" class="com.klunniy.springcourse.player.MusicPlayer" scope="prototype">-->
+    <!--        &lt;!&ndash;<constructor-arg ref="musicBean"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <property name="music" ref="musicBean"/>&ndash;&gt;-->
+    <!--        <constructor-arg>-->
+    <!--            <list>-->
+    <!--                <ref bean="rockBean"/>-->
+    <!--                <ref bean="popBean"/>-->
+    <!--                <ref bean="classicalBean"/>-->
+    <!--            </list>-->
+    <!--        </constructor-arg>-->
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <!--    </bean>-->
 
-<!--    <bean id="ukraineFootball"-->
-<!--          class="com.klunniy.springcourse.musicGenres.impl.UkraineFootball" scope="prototype"-->
-<!--          init-method="doMyInit"-->
-<!--          destroy-method="doMyDestroy">-->
-<!--        <property name="name" value="VICTORY"/>-->
-<!--    </bean>-->
+    <!--    <bean id="ukraineFootball"-->
+    <!--          class="com.klunniy.springcourse.musicGenres.impl.UkraineFootball" scope="prototype"-->
+    <!--          init-method="doMyInit"-->
+    <!--          destroy-method="doMyDestroy">-->
+    <!--        <property name="name" value="VICTORY"/>-->
+    <!--    </bean>-->
 </beans>

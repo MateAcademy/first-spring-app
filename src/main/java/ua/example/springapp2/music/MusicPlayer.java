@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ua.example.springapp2.music.Music;
 import ua.example.springapp2.music.impl.ClassicalMusic;
@@ -19,12 +20,12 @@ import ua.example.springapp2.music.impl.RockMusic;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MusicPlayer {
 
-    ClassicalMusic classicalMusic;
+    Music classicalMusic;
     RockMusic rockMusic;
     int volume;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+    public MusicPlayer( @Qualifier("classicalMusic") Music classicalMusic, RockMusic rockMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
     }

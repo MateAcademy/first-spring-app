@@ -9,16 +9,23 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-<!--    <bean id="testBean" class="ua.example.springapp1.TestBean">-->
-<!--        <constructor-arg value="Neil"/>-->
-<!--    </bean>-->
+    <!--    <bean id="testBean" class="ua.example.springapp1.TestBean">-->
+    <!--        <constructor-arg value="Neil"/>-->
+    <!--    </bean>-->
 
-    <bean id="musicBean" class="ua.example.springapp2.impl.RockMusic" scope="prototype"/>
+    <bean id="musicBean"
+          class="ua.example.springapp2.music.impl.RockMusic"
+          scope="prototype"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"/>
 
-    <bean id="musicPlayer" class="ua.example.springapp2.MusicPlayer" scope="singleton">
-<!--        <constructor-arg ref="musicBean"/>-->
+    <bean id="musicPlayer"
+          class="ua.example.springapp2.music.MusicPlayer" scope="singleton"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
+        <!--        <constructor-arg ref="musicBean"/>-->
         <property name="music" ref="musicBean"/>
-        <property name="name" value="${musicPlayer.name}"/>
+        <property name="name" value="${musicPlayer.name"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 

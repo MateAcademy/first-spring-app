@@ -1,7 +1,7 @@
 package ua.example.springapp2;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.example.springapp1.TestBean;
+import ua.example.springapp2.music.MusicPlayer;
 
 /**
  * @author Serhii Klunniy

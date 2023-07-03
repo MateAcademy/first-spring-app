@@ -1,4 +1,4 @@
-package ua.example.springapp2;
+package ua.example.springapp2.music;
 
 /**
  * @author Serhii Klunniy

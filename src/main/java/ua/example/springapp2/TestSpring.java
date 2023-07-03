@@ -12,8 +12,7 @@ public class TestSpring {
     public static void main(String[] args) {
         try (var context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
             var computer = context.getBean("computer", Computer.class);
-            System.out.println(computer);
-
+            System.out.println(computer.getId());
 
 //           System.out.println(musicPlayer);
 //           var musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);

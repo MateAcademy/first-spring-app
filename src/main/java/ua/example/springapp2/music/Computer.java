@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Data
 @Component
 public class Computer {
@@ -25,11 +28,12 @@ public class Computer {
         return "exit ";
     }
 
-
+    @PostConstruct
     public void doMyInit() {
         System.out.println("Init method in class Computer");
     }
 
+    @PreDestroy
     public void doMyDestroy() {
         System.out.println("Destroy method in class Computer");
     }
